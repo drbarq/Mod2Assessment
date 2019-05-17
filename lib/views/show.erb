@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Your new Moto!</title>
+  </head>
+  <body>
+    <li><%= @new.make %>
+        <%= @new.model %>
+        <%= @new.engine_cc %></li>
+
+    <form action="/motorcycles" method="GET">
+      <input type="submit" name="Go to Garage" value="Go to Garage">
+    </form>
+
+    <form action="/motorcycles/new" method="GET">
+      <input type="submit" name="Create New Bike" value="Create New Bike">
+    </form>
+
+    <form action="/motorcycles/<%= @new.id %>/edit" method="GET">
+      <input type="submit" name="Edit this Bike" value="Edit this Bike">
+    </form>
+
+    <form method="post" action="/motorcycles/<%= @new.id %>/delete">
+      <input id="hidden" type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Delete <%= @new.model %>">
+    </form>
+
+  </body>
+</html>

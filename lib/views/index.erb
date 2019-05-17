@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Hello!</h2>
+
+    <% @motorcycles.each do |moto|%>
+      <li><a href="/motorcycles/<%= moto.id %>"><%= moto.make %></a>
+          <%= moto.model %>
+          <%= moto.engine_cc %> </li>
+
+        <% end %>
+
+    <form action="/motorcycles/new" method="GET">
+      <input type="submit" name="Create New Bike" value="Create New Bike">
+    </form>
+
+  </body>
+</html>

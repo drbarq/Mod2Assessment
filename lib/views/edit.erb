@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <form action="/motorcycles/<%= @new.id %>" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+      <h2>Edit your Motorcycle!</h2>
+      <label for="make">Make</label>
+        <input type="text" name="make" value = "<%= @new.make %>">
+      <label for="model">Model</label>
+        <input type="text" name="model" value="<%= @new.model %>">
+      <label for="engine_cc">Engine CC</label>
+        <input type="text" name="engine_cc" value="<%= @new.engine_cc %>">
+      <input type="submit" value="Update!">
+    </form>
+
+    <form action="/motorcycles" method="GET">
+      <input type="submit" name="Go to Garage" value="Go to Garage">
+    </form>
+
+    <form action="/motorcycles/new" method="GET">
+      <input type="submit" name="Create New Bike" value="Create New Bike">
+    </form>
+
+
+  </body>
